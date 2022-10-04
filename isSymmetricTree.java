@@ -12,8 +12,7 @@ class Solution {
             TreeNode ri  = st.pop();
             TreeNode le  = st.pop();
             if(ri == null && le == null) continue;
-            if((ri == null && le != null) || (ri != null && le == null)) return false;
-            if(ri.val != le.val) return false;
+            if((ri == null || le == null) || (ri.val != le.val)) return false;
             st.push(ri.right);
             st.push(le.left);
             st.push(ri.left);
